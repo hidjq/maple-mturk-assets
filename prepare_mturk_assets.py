@@ -3,7 +3,7 @@ import shutil
 from pathlib import Path
 
 QUESTIONS_PATH = Path("questions_table.json")  # 改成你的实际路径
-SRC_ROOT = Path("table_extraction")         # 改成你的实际路径（包含 figure_extraction 目录）
+SRC_ROOT = Path("table_extraction")         # 改成你的实际路径（包含 table_extraction 目录）
 DST_ROOT = Path("mturk_assets_site")         # 要上传到 GitHub Pages 的目录
 
 def load_objects(path: Path):
@@ -35,7 +35,7 @@ def main():
 
         for img in images:
             src = SRC_ROOT / field / paper / table_name / img
-            dst = DST_ROOT / "figure_extraction" / field / paper / table_name / img
+            dst = DST_ROOT / "table_extraction" / field / paper / table_name / img
             dst.parent.mkdir(parents=True, exist_ok=True)
 
             if not src.exists():
